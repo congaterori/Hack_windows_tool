@@ -110,7 +110,7 @@ set /p packets=number packets:
 start ping %websiteddos% -l %packets% -w 1 -n 1
 start ping %websiteddos% -t -l %packets%
 @ping.exe %websiteddos% -n 5 -w %packets%
-start start ping %websiteddos% -n %packets%
+start ping %websiteddos% -n %packets%
 pause
 goto ddos
 :ddoslevel2
@@ -160,6 +160,7 @@ start "type aireplay-ng to start aircrack-ng"
 pause
 goto start
 :64-bit
+cls
 echo click button ok
 pause
 move aircrack-ng-1.6-win C:\Program Files (x86)\ > nul
@@ -194,10 +195,10 @@ goto start
 cls
 echo                          .----------------------,  ,----------------------.
 echo                          ^|       link main      ^|  ^|       link file      ^|
-echo must have link https://>>download.aircrack-ng.org<</aircrack-ng-1.6-win.zip<<
+echo must have link https://download.aircrack-ng.org/aircrack-ng-1.6-win.zip
 set /p powershellname=link file(Ex:https://download.aircrack-ng.org/aircrack-ng-1.6-win.zip): 
 set /p powershellfile=filename(Ex:aircrack-ng-1.6-win.zip): 
-powershell -Command "Invoke-WebRequest %powershellname% -OutFile %powershellname%"
+powershell -Command "Invoke-WebRequest %powershellname% -OutFile %powershellfile%"
 pause
 goto more
 :downloadstart
